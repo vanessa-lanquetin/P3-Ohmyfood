@@ -76,18 +76,20 @@ a {
     font-weight: bold;
   }
 }
+.fonctionnement__list {
+  margin-left: 25px;
 
-.fonctionnement__list__item {
-  display: flex;
-  align-items: center;
-  background-color: $color-background;
-  padding: 12px 40px 10px 20px;
-  margin: 0 0 20px 0;
-  width: 70%;
-  border-radius: 30px;
-  font-weight: bold;
+  &__item {
+    display: flex;
+    align-items: center;
+    background-color: $color-background;
+    padding: 12px 40px 10px 20px;
+    margin: 0 0 20px 0;
+    width: 70%;
+    border-radius: 30px;
+    font-weight: bold;
+  }
 }
-
 #icon_mobile {
   padding-right: 25px;
 }
@@ -161,12 +163,15 @@ a {
   z-index: 1;
   padding: 12px 30px 0 0;
   font-size: 25px;
+  &:hover,:focus{
+    background:linear-gradient(#9356DC, #FF79DA);
+  }
 }
 
 .footer {
   background-color: #353535;
   color: white;
-  padding:15px 0;
+  padding: 15px 0;
   &__title {
     font-family: "Shrikhand", cursive;
     font-size: 20px;
@@ -176,7 +181,7 @@ a {
     color: white;
     margin-bottom: 15px;
   }
-  &__list{
+  &__list {
     margin-left: 25px;
   }
 }
