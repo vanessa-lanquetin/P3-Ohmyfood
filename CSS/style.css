@@ -330,7 +330,7 @@ header {
     margin-left: 20px;
   }
   .fonctionnement__btn__number {
-    left: 0;
+    left: -8px;
   }
 }
 
