@@ -360,5 +360,17 @@ header {
     right: 30px;
     bottom: 12px;
   }
+  .footer {
+    text-align: center;
+  }
+  .footer__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

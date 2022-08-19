@@ -298,4 +298,12 @@ header {
       bottom: 12px;
     }
   }
+  .footer{
+    text-align: center;
+    &__list{
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+  }
 }
