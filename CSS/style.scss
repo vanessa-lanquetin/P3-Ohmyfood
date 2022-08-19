@@ -8,23 +8,19 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-background: #f6f6f6;
 
+//Mixins
+@mixin bloc-shadow {
+  box-shadow: 0px 0px 1rem 0px $shadow;
+}
+
+//Bases
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
-header {
-  text-align: center;
-  font-family: "Shrikhand", cursive;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.376);
-  padding: 4.8px;
-}
-
 h1,
 h3 {
   margin: 10px 0 0 0;
-}
-h2 {
-  margin: 10px 0 10px 25px;
 }
 ul {
   list-style: none;
@@ -35,10 +31,20 @@ a {
   color: black;
   margin: 0;
 }
+
+//Header
+header {
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  padding: 4.8px;
+}
+
+//Localisation
 .localisation {
   display: flex;
   padding: 15px 0;
   background-color: #eaeaea;
+  box-shadow: inset 5px 13px 5px -10px #cecece;
 
   &__icon {
     margin-left: 100px;
@@ -53,6 +59,7 @@ a {
   }
 }
 
+//Explore
 .explore {
   background-color: $color-background;
   text-align: center;
@@ -76,10 +83,12 @@ a {
     font-weight: bold;
   }
 }
-.fonctionnement{
+
+//Fonctionnement
+.fonctionnement {
   margin: 45px 0 0 25px;
   position: relative;
-  &__title{
+  &__title {
     padding-bottom: 20px;
   }
   &__btn {
@@ -88,33 +97,44 @@ a {
     background-color: $color-background;
     padding: 12px 40px 10px 20px;
     margin: 0 0 20px 0;
-    width: 70%;
+    width: 75%;
     border-radius: 30px;
     font-weight: bold;
-    &__number{
+    transform: scale(1);
+    transition: transform 300ms;
+    box-shadow: 4px 4px 10px #cfcfcf;
+    &__number {
       background-color: #9356dc;
       color: white;
       padding: 8px 10px;
       border-radius: 60px;
       position: absolute;
       left: -5px;
-      font-size: 10px;
+      font-size: 12px;
     }
-    &__icon{
-      margin-left: 15px;
-      
+    &__icon {
+      margin-left: 20px;
+    }
+    &:hover {
+      transform: scale(1.01);
+      background-color: lighten($color-primary, 35%);
+    }
+    &:hover > .fonctionnement__btn__icon {
+      color: $color-primary;
+    }
+    #icon_mobile {
+      padding-right: 25px;
+    }
+    #icon_list {
+      padding-right: 17px;
+    }
+    #icon_store {
+      padding-right: 15px;
     }
   }
 }
-#icon_mobile {
-  padding-right: 25px;
-}
-#icon_list {
-  padding-right: 17px;
-}
-#icon_store {
-  padding-right: 15px;
-}
+
+//Restaurants
 .restaurant {
   background-color: $color-background;
   &__title {
@@ -136,7 +156,7 @@ a {
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
-
+  box-shadow: 4px 4px 10px #cfcfcf;
   &__container {
     display: flex;
     flex-direction: column;
@@ -174,16 +194,44 @@ a {
     }
   }
 }
+//Coeur
+.btn__like {
+  cursor: pointer;
+  .like-empty,
+  .like-full {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: 20px;
+  }
 
-.heart_icon {
-  z-index: 1;
-  padding: 12px 30px 0 0;
-  font-size: 25px;
-  &:hover,:focus{
-    background:linear-gradient(#9356DC, #FF79DA);
+  &:hover {
+    .like-empty {
+      opacity: 0;
+    }
+    .like-full {
+      opacity: 1;
+    }
+  }
+
+  .like-empty {
+    transition: all 2s ease-in-out;
+  }
+
+  .like-full {
+    display: block;
+    background: -webkit-linear-gradient(bottom left, #ff79da 30%, #9656dc 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
+//Footer
 .footer {
   background-color: #353535;
   color: white;
@@ -195,9 +243,11 @@ a {
   }
   a {
     color: white;
-    margin-bottom: 15px;
   }
   &__list {
     margin-left: 25px;
+    &__item {
+      margin-bottom: 5px;
+    }
   }
 }

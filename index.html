@@ -28,6 +28,7 @@
     </section>
     <section class="fonctionnement">
       <h2 class="fonctionnement__title">Fonctionnement</h2>
+      <article>
         <a href="" class="fonctionnement__btn">
           <div class="fonctionnement__btn__number">1</div>
           <i id="icon_mobile" class="fas fa-mobile-alt icons fonctionnement__btn__icon"></i>
@@ -43,6 +44,7 @@
           <i id="icon_store" class="fas fa-store icons fonctionnement__btn__icon"></i>
           <p>Dégustez au restaurant</p>
         </a>
+      </article>
     </section>
     <section class="restaurant">
       <h2 class="restaurant__title">Restaurants</h2>
@@ -59,7 +61,10 @@
                 <p class="card__content__text__localisation">Ménilmontant</p>
               </div>
               <div class="card_content_icon">
-                <i class="far fa-heart heart_icon"></i>
+                <div class="btn__like">
+                  <i class="far fa-heart x2 like-empty"></i>
+                  <i id="heart1" class="fas fa-heart x2 like-full"></i>
+                </div>
               </div>
             </div>
           </a>
@@ -76,7 +81,9 @@
                 <p class="card__content__text__localisation">Charonne</p>
               </div>
               <div class="card_content_icon">
-                <i class="far fa-heart heart_icon"></i>
+                <div class="btn__like">
+                  <i class="far fa-heart x2 like-empty"></i>
+                  <i class="fas fa-heart x2 like-full"></i>
               </div>
             </div>
           </a>
@@ -92,7 +99,9 @@
                 <p class="card__content__text__localisation">Cité Rouge</p>
               </div>
               <div class="card_content_icon">
-                <i class="far fa-heart heart_icon"></i>
+                <div class="btn__like">
+                  <i class="far fa-heart x2 like-empty"></i>
+                  <i class="fas fa-heart x2 like-full"></i>
               </div>
             </div>
           </a>
@@ -109,7 +118,9 @@
                 <p class="card__content__text__localisation">Folie-Méricourt</p>
               </div>
               <div>
-                <i class="far fa-heart heart_icon"></i>
+                <div class="btn__like">
+                  <i class="far fa-heart x2 like-empty"></i>
+                  <i class="fas fa-heart x2 like-full"></i>
               </div>
             </div>
           </a>
@@ -119,23 +130,23 @@
     <footer class="footer">
       <h4 class="footer__title">ohmyfood</h4>
       <ul class="footer__list">
-        <li>
+        <li class="footer__list__item">
           <a href="">
             <i class="fas fa-utensils"></i>
             Proposer un restaurant
           </a>
         </li>
-        <li>
+        <li class="footer__list__item">
           <a href="">
             <i class="fas fa-hands-helping"></i>
             Devenir partenaire
           </a>
         </li>
-        <li>
+        <li class="footer__list__item">
           <a href=""></a>
           Mentions légales
         </li>
-        <li>
+        <li class="footer__list__item">
           <a href=""></a>
           Contact
         </li>

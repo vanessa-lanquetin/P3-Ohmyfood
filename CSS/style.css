@@ -5,21 +5,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-header {
-  text-align: center;
-  font-family: "Shrikhand", cursive;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.376);
-          box-shadow: 0 0 8px rgba(0, 0, 0, 0.376);
-  padding: 4.8px;
-}
-
 h1,
 h3 {
   margin: 10px 0 0 0;
-}
-
-h2 {
-  margin: 10px 0 10px 25px;
 }
 
 ul {
@@ -33,12 +21,20 @@ a {
   margin: 0;
 }
 
+header {
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  padding: 4.8px;
+}
+
 .localisation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 15px 0;
   background-color: #eaeaea;
+  -webkit-box-shadow: inset 5px 13px 5px -10px #cecece;
+          box-shadow: inset 5px 13px 5px -10px #cecece;
 }
 
 .localisation__icon {
@@ -97,9 +93,17 @@ a {
   background-color: #f6f6f6;
   padding: 12px 40px 10px 20px;
   margin: 0 0 20px 0;
-  width: 70%;
+  width: 75%;
   border-radius: 30px;
   font-weight: bold;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-box-shadow: 4px 4px 10px #cfcfcf;
+          box-shadow: 4px 4px 10px #cfcfcf;
 }
 
 .fonctionnement__btn__number {
@@ -109,22 +113,32 @@ a {
   border-radius: 60px;
   position: absolute;
   left: -5px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .fonctionnement__btn__icon {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
-#icon_mobile {
+.fonctionnement__btn:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  background-color: #f2eafb;
+}
+
+.fonctionnement__btn:hover > .fonctionnement__btn__icon {
+  color: #9356dc;
+}
+
+.fonctionnement__btn #icon_mobile {
   padding-right: 25px;
 }
 
-#icon_list {
+.fonctionnement__btn #icon_list {
   padding-right: 17px;
 }
 
-#icon_store {
+.fonctionnement__btn #icon_store {
   padding-right: 15px;
 }
 
@@ -160,6 +174,8 @@ a {
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
+  -webkit-box-shadow: 4px 4px 10px #cfcfcf;
+          box-shadow: 4px 4px 10px #cfcfcf;
 }
 
 .card__container {
@@ -217,15 +233,43 @@ a {
   margin: 3px 0 15px 0;
 }
 
-.heart_icon {
-  z-index: 1;
-  padding: 12px 30px 0 0;
-  font-size: 25px;
+.btn__like {
+  cursor: pointer;
 }
 
-.heart_icon:hover, .heart_icon :focus {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  background: linear-gradient(#9356DC, #FF79DA);
+.btn__like .like-empty,
+.btn__like .like-full {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-size: 20px;
+}
+
+.btn__like:hover .like-empty {
+  opacity: 0;
+}
+
+.btn__like:hover .like-full {
+  opacity: 1;
+}
+
+.btn__like .like-empty {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.btn__like .like-full {
+  display: block;
+  background: -webkit-linear-gradient(bottom left, #ff79da 30%, #9656dc 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.btn__like .like-full:hover {
+  opacity: 1;
 }
 
 .footer {
@@ -242,10 +286,13 @@ a {
 
 .footer a {
   color: white;
-  margin-bottom: 15px;
 }
 
 .footer__list {
   margin-left: 25px;
+}
+
+.footer__list__item {
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=style.css.map */
