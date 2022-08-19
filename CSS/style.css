@@ -35,10 +35,13 @@ header {
   background-color: #eaeaea;
   -webkit-box-shadow: inset 5px 13px 5px -10px #cecece;
           box-shadow: inset 5px 13px 5px -10px #cecece;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .localisation__icon {
-  margin-left: 100px;
+  padding-left: 100px;
 }
 
 .localisation__input {
@@ -47,6 +50,7 @@ header {
   border: none;
   font-weight: bold;
   font-size: 17px;
+  width: 100%;
 }
 
 .explore {
@@ -74,6 +78,15 @@ header {
   font-weight: bold;
 }
 
+.explore__button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: 4px 4px 10px #a3a2a2;
+          box-shadow: 4px 4px 10px #a3a2a2;
+}
+
 .fonctionnement {
   margin: 45px 0 0 25px;
   position: relative;
@@ -96,12 +109,16 @@ header {
   width: 75%;
   border-radius: 30px;
   font-weight: bold;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -webkit-box-shadow: 4px 4px 10px #cfcfcf;
-          box-shadow: 4px 4px 10px #cfcfcf;
+  position: relative;
+}
+
+.fonctionnement__btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: 4px 4px 10px #a3a2a2;
+          box-shadow: 4px 4px 10px #a3a2a2;
 }
 
 .fonctionnement__btn__number {
@@ -172,8 +189,15 @@ header {
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
-  -webkit-box-shadow: 4px 4px 10px #cfcfcf;
-          box-shadow: 4px 4px 10px #cfcfcf;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: 4px 4px 10px #a3a2a2;
+          box-shadow: 4px 4px 10px #a3a2a2;
 }
 
 .card__container {
@@ -259,7 +283,7 @@ header {
 .btn__like .like-full {
   display: block;
   background: -webkit-linear-gradient(bottom left, #ff79da 30%, #9656dc 70%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
   -webkit-transition: all 2s ease-in-out;
@@ -292,5 +316,49 @@ header {
 
 .footer__list__item {
   margin-bottom: 5px;
+}
+
+@media screen and (min-width: 585px) {
+  .fonctionnement__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 80%;
+    margin-left: 20px;
+  }
+  .fonctionnement__btn__number {
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 852px) {
+  .fonctionnement__article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 50px;
+  }
+  .fonctionnement__btn {
+    width: 70%;
+  }
+  .restaurant__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 20px;
+    margin: 0 20px;
+  }
+  .btn__like .like-empty,
+  .btn__like .like-full {
+    right: 30px;
+    bottom: 12px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

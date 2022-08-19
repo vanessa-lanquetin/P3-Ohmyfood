@@ -27,6 +27,14 @@ a {
   margin: 0;
 }
 
+@mixin shadow {
+  &:hover {
+    transform: scale(1.02);
+    transition: 300ms;
+    box-shadow: 4px 4px 10px #a3a2a2;
+  }
+}
+
 //Header
 header {
   text-align: center;
@@ -40,9 +48,10 @@ header {
   padding: 15px 0;
   background-color: #eaeaea;
   box-shadow: inset 5px 13px 5px -10px #cecece;
+  justify-content: center;
 
   &__icon {
-    margin-left: 100px;
+    padding-left: 100px;
   }
 
   &__input {
@@ -51,6 +60,7 @@ header {
     border: none;
     font-weight: bold;
     font-size: 17px;
+    width: 100%;
   }
 }
 
@@ -76,6 +86,7 @@ header {
     background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
     color: #fff;
     font-weight: bold;
+    @include shadow;
   }
 }
 
@@ -95,9 +106,8 @@ header {
     width: 75%;
     border-radius: 30px;
     font-weight: bold;
-    transform: scale(1);
-    transition: all 1s ease-in-out;
-    box-shadow: 4px 4px 10px #cfcfcf;
+    position: relative;
+    @include shadow;
     &__number {
       background-color: #9356dc;
       color: white;
@@ -151,7 +161,7 @@ header {
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
-  box-shadow: 4px 4px 10px #cfcfcf;
+  @include shadow;
   &__container {
     display: flex;
     flex-direction: column;
@@ -216,7 +226,7 @@ header {
   .like-full {
     display: block;
     background: -webkit-linear-gradient(bottom left, #ff79da 30%, #9656dc 70%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
     transition: all 2s ease-in-out;
@@ -243,6 +253,49 @@ header {
     margin-left: 25px;
     &__item {
       margin-bottom: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 585px) {
+  .fonctionnement {
+    &__btn {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin-left: 20px;
+      &__number {
+        left:0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 852px) {
+  .fonctionnement {
+    &__article {
+      display: flex;
+      margin-right: 50px;
+    }
+    &__btn {
+      width: 70%;
+    }
+  }
+
+  .restaurant {
+    &__list {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin: 0 20px;
+    }
+  }
+  .btn__like {
+    .like-empty,
+    .like-full {
+
+      right: 30px;
+      bottom: 12px;
     }
   }
 }
