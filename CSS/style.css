@@ -98,10 +98,8 @@ header {
   font-weight: bold;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   -webkit-box-shadow: 4px 4px 10px #cfcfcf;
           box-shadow: 4px 4px 10px #cfcfcf;
 }
@@ -206,10 +204,10 @@ header {
   border-radius: 15px 15px 0 0;
 }
 
-.card__image__span {
+.card__image__new {
   padding: 10px;
   background-color: #99e2d0;
-  color: green;
+  color: #239b7e;
   position: absolute;
   top: 10px;
   right: 10px;

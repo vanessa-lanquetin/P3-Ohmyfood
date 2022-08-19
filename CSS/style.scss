@@ -8,11 +8,6 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-background: #f6f6f6;
 
-//Mixins
-@mixin bloc-shadow {
-  box-shadow: 0px 0px 1rem 0px $shadow;
-}
-
 //Bases
 body {
   margin: 0;
@@ -101,7 +96,7 @@ header {
     border-radius: 30px;
     font-weight: bold;
     transform: scale(1);
-    transition: transform 300ms;
+    transition: all 1s ease-in-out;
     box-shadow: 4px 4px 10px #cfcfcf;
     &__number {
       background-color: #9356dc;
@@ -172,10 +167,10 @@ header {
     height: 100%;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
-    &__span {
+    &__new {
       padding: 10px;
       background-color: $color-tertiary;
-      color: green;
+      color: #239b7e;
       position: absolute;
       top: 10px;
       right: 10px;
