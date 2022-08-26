@@ -224,6 +224,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: #343434;
+  background-color: #f6f6f6;
 }
 
 h1,
@@ -857,7 +858,8 @@ header .back {
 }
 
 .fonctionnement {
-  margin: 45px 0 0 25px;
+  padding: 45px 0 45px 25px;
+  background-color: white;
   position: relative;
 }
 
@@ -932,7 +934,7 @@ header .back {
 
 .restaurant__title {
   margin-left: 20px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .restaurant__list {
