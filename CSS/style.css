@@ -40,6 +40,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 0;
 }
 
 .mainsection__header__title {
@@ -959,6 +960,7 @@ header .back {
   background-color: #fff;
   margin-bottom: 20px;
   border-radius: 10px;
+  z-index: 0;
   position: relative;
 }
 
@@ -1055,6 +1057,7 @@ header .back {
   top: 0;
   width: 30px;
   height: 30px;
+  z-index: 2;
 }
 
 .btn__like .like-empty,
