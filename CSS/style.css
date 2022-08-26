@@ -1,8 +1,229 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.background {
+  width: 100%;
+  max-height: 40vh;
+}
+
+.background img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mainsection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  background-color: #f6f6f6;
+  z-index: 1;
+}
+
+.mainsection__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainsection__header__title {
+  font-size: 1.7em;
+  font-family: "Shrikhand";
+}
+
+.mainsection__header__actions__like {
+  position: relative;
+}
+
+.menu h2 {
+  color: #747474;
+  font-weight: 100;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.menu h2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 50px;
+  height: 5px;
+  background-color: #99e2d0;
+}
+
+section .cardlines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+section .cardlines__cardline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  background-color: white;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation-name: cardAppear;
+          animation-name: cardAppear;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+section .cardlines__cardline__title {
+  font-weight: bold;
+  font-size: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+section .cardlines__cardline__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+section .cardlines__cardline__left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  min-width: 0;
+}
+
+section .cardlines__cardline__right {
+  font-weight: bold;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 15px;
+}
+
+section .cardlines__cardline__actions {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 70px;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  max-width: 0;
+}
+
+section .cardlines__cardline__actions button {
+  background-color: #99e2d0;
+  border: none;
+  color: white;
+  width: 60px;
+  cursor: pointer;
+}
+
+section .cardlines__cardline__actions button i {
+  background-color: white;
+  color: #99e2d0;
+  border-radius: 50%;
+  font-size: 13px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: rotateZ(-360deg);
+          transform: rotateZ(-360deg);
+}
+
+section .cardlines__cardline:hover .cardlines__cardline__actions {
+  max-width: 1000px;
+}
+
+section .cardlines__cardline:hover .cardlines__cardline__actions i {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+#command {
+  margin: 50px auto;
+  padding: 20px 35px;
+  width: 170px;
+  font-size: 16px;
+}
+
+@-webkit-keyframes cardAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  color: #343434;
 }
 
 h1,
@@ -21,10 +242,559 @@ a {
   margin: 0;
 }
 
+.btn-gradient {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+  padding: 13px 18px;
+  border: none;
+  border-radius: 60px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-gradient:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: 4px 4px 10px #a3a2a2;
+          box-shadow: 4px 4px 10px #a3a2a2;
+}
+
+section .cardlines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+section .cardlines .cardlines__cardline__1 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+section .cardlines .cardlines__cardline__2 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+section .cardlines .cardlines__cardline__3 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+section .cardlines .cardlines__cardline__4 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+section .cardlines .cardlines__cardline__5 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+section .cardlines .cardlines__cardline__6 {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+section .cardlines .cardlines__cardline__7 {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
+}
+
+section .cardlines .cardlines__cardline__8 {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+}
+
+section .cardlines .cardlines__cardline__9 {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+
+section .cardlines .cardlines__cardline__10 {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+
+section .cardlines .cardlines__cardline__11 {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms;
+}
+
+section .cardlines .cardlines__cardline__12 {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+}
+
+section .cardlines .cardlines__cardline__13 {
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms;
+}
+
+section .cardlines .cardlines__cardline__14 {
+  -webkit-animation-delay: 2800ms;
+          animation-delay: 2800ms;
+}
+
+section .cardlines .cardlines__cardline__15 {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+
+section .cardlines .cardlines__cardline__16 {
+  -webkit-animation-delay: 3200ms;
+          animation-delay: 3200ms;
+}
+
+section .cardlines .cardlines__cardline__17 {
+  -webkit-animation-delay: 3400ms;
+          animation-delay: 3400ms;
+}
+
+section .cardlines .cardlines__cardline__18 {
+  -webkit-animation-delay: 3600ms;
+          animation-delay: 3600ms;
+}
+
+section .cardlines .cardlines__cardline__19 {
+  -webkit-animation-delay: 3800ms;
+          animation-delay: 3800ms;
+}
+
+section .cardlines .cardlines__cardline__20 {
+  -webkit-animation-delay: 4000ms;
+          animation-delay: 4000ms;
+}
+
+section .cardlines .cardlines__cardline__21 {
+  -webkit-animation-delay: 4200ms;
+          animation-delay: 4200ms;
+}
+
+section .cardlines .cardlines__cardline__22 {
+  -webkit-animation-delay: 4400ms;
+          animation-delay: 4400ms;
+}
+
+section .cardlines .cardlines__cardline__23 {
+  -webkit-animation-delay: 4600ms;
+          animation-delay: 4600ms;
+}
+
+section .cardlines .cardlines__cardline__24 {
+  -webkit-animation-delay: 4800ms;
+          animation-delay: 4800ms;
+}
+
+section .cardlines .cardlines__cardline__25 {
+  -webkit-animation-delay: 5000ms;
+          animation-delay: 5000ms;
+}
+
+section .cardlines .cardlines__cardline__26 {
+  -webkit-animation-delay: 5200ms;
+          animation-delay: 5200ms;
+}
+
+section .cardlines .cardlines__cardline__27 {
+  -webkit-animation-delay: 5400ms;
+          animation-delay: 5400ms;
+}
+
+section .cardlines .cardlines__cardline__28 {
+  -webkit-animation-delay: 5600ms;
+          animation-delay: 5600ms;
+}
+
+section .cardlines .cardlines__cardline__29 {
+  -webkit-animation-delay: 5800ms;
+          animation-delay: 5800ms;
+}
+
+section .cardlines .cardlines__cardline__30 {
+  -webkit-animation-delay: 6000ms;
+          animation-delay: 6000ms;
+}
+
+section .cardlines .cardlines__cardline__31 {
+  -webkit-animation-delay: 6200ms;
+          animation-delay: 6200ms;
+}
+
+section .cardlines .cardlines__cardline__32 {
+  -webkit-animation-delay: 6400ms;
+          animation-delay: 6400ms;
+}
+
+section .cardlines .cardlines__cardline__33 {
+  -webkit-animation-delay: 6600ms;
+          animation-delay: 6600ms;
+}
+
+section .cardlines .cardlines__cardline__34 {
+  -webkit-animation-delay: 6800ms;
+          animation-delay: 6800ms;
+}
+
+section .cardlines .cardlines__cardline__35 {
+  -webkit-animation-delay: 7000ms;
+          animation-delay: 7000ms;
+}
+
+section .cardlines .cardlines__cardline__36 {
+  -webkit-animation-delay: 7200ms;
+          animation-delay: 7200ms;
+}
+
+section .cardlines .cardlines__cardline__37 {
+  -webkit-animation-delay: 7400ms;
+          animation-delay: 7400ms;
+}
+
+section .cardlines .cardlines__cardline__38 {
+  -webkit-animation-delay: 7600ms;
+          animation-delay: 7600ms;
+}
+
+section .cardlines .cardlines__cardline__39 {
+  -webkit-animation-delay: 7800ms;
+          animation-delay: 7800ms;
+}
+
+section .cardlines .cardlines__cardline__40 {
+  -webkit-animation-delay: 8000ms;
+          animation-delay: 8000ms;
+}
+
+section .cardlines .cardlines__cardline__41 {
+  -webkit-animation-delay: 8200ms;
+          animation-delay: 8200ms;
+}
+
+section .cardlines .cardlines__cardline__42 {
+  -webkit-animation-delay: 8400ms;
+          animation-delay: 8400ms;
+}
+
+section .cardlines .cardlines__cardline__43 {
+  -webkit-animation-delay: 8600ms;
+          animation-delay: 8600ms;
+}
+
+section .cardlines .cardlines__cardline__44 {
+  -webkit-animation-delay: 8800ms;
+          animation-delay: 8800ms;
+}
+
+section .cardlines .cardlines__cardline__45 {
+  -webkit-animation-delay: 9000ms;
+          animation-delay: 9000ms;
+}
+
+section .cardlines .cardlines__cardline__46 {
+  -webkit-animation-delay: 9200ms;
+          animation-delay: 9200ms;
+}
+
+section .cardlines .cardlines__cardline__47 {
+  -webkit-animation-delay: 9400ms;
+          animation-delay: 9400ms;
+}
+
+section .cardlines .cardlines__cardline__48 {
+  -webkit-animation-delay: 9600ms;
+          animation-delay: 9600ms;
+}
+
+section .cardlines .cardlines__cardline__49 {
+  -webkit-animation-delay: 9800ms;
+          animation-delay: 9800ms;
+}
+
+section .cardlines .cardlines__cardline__50 {
+  -webkit-animation-delay: 10000ms;
+          animation-delay: 10000ms;
+}
+
+section .cardlines .cardlines__cardline__51 {
+  -webkit-animation-delay: 10200ms;
+          animation-delay: 10200ms;
+}
+
+section .cardlines .cardlines__cardline__52 {
+  -webkit-animation-delay: 10400ms;
+          animation-delay: 10400ms;
+}
+
+section .cardlines .cardlines__cardline__53 {
+  -webkit-animation-delay: 10600ms;
+          animation-delay: 10600ms;
+}
+
+section .cardlines .cardlines__cardline__54 {
+  -webkit-animation-delay: 10800ms;
+          animation-delay: 10800ms;
+}
+
+section .cardlines .cardlines__cardline__55 {
+  -webkit-animation-delay: 11000ms;
+          animation-delay: 11000ms;
+}
+
+section .cardlines .cardlines__cardline__56 {
+  -webkit-animation-delay: 11200ms;
+          animation-delay: 11200ms;
+}
+
+section .cardlines .cardlines__cardline__57 {
+  -webkit-animation-delay: 11400ms;
+          animation-delay: 11400ms;
+}
+
+section .cardlines .cardlines__cardline__58 {
+  -webkit-animation-delay: 11600ms;
+          animation-delay: 11600ms;
+}
+
+section .cardlines .cardlines__cardline__59 {
+  -webkit-animation-delay: 11800ms;
+          animation-delay: 11800ms;
+}
+
+section .cardlines .cardlines__cardline__60 {
+  -webkit-animation-delay: 12000ms;
+          animation-delay: 12000ms;
+}
+
+section .cardlines .cardlines__cardline__61 {
+  -webkit-animation-delay: 12200ms;
+          animation-delay: 12200ms;
+}
+
+section .cardlines .cardlines__cardline__62 {
+  -webkit-animation-delay: 12400ms;
+          animation-delay: 12400ms;
+}
+
+section .cardlines .cardlines__cardline__63 {
+  -webkit-animation-delay: 12600ms;
+          animation-delay: 12600ms;
+}
+
+section .cardlines .cardlines__cardline__64 {
+  -webkit-animation-delay: 12800ms;
+          animation-delay: 12800ms;
+}
+
+section .cardlines .cardlines__cardline__65 {
+  -webkit-animation-delay: 13000ms;
+          animation-delay: 13000ms;
+}
+
+section .cardlines .cardlines__cardline__66 {
+  -webkit-animation-delay: 13200ms;
+          animation-delay: 13200ms;
+}
+
+section .cardlines .cardlines__cardline__67 {
+  -webkit-animation-delay: 13400ms;
+          animation-delay: 13400ms;
+}
+
+section .cardlines .cardlines__cardline__68 {
+  -webkit-animation-delay: 13600ms;
+          animation-delay: 13600ms;
+}
+
+section .cardlines .cardlines__cardline__69 {
+  -webkit-animation-delay: 13800ms;
+          animation-delay: 13800ms;
+}
+
+section .cardlines .cardlines__cardline__70 {
+  -webkit-animation-delay: 14000ms;
+          animation-delay: 14000ms;
+}
+
+section .cardlines .cardlines__cardline__71 {
+  -webkit-animation-delay: 14200ms;
+          animation-delay: 14200ms;
+}
+
+section .cardlines .cardlines__cardline__72 {
+  -webkit-animation-delay: 14400ms;
+          animation-delay: 14400ms;
+}
+
+section .cardlines .cardlines__cardline__73 {
+  -webkit-animation-delay: 14600ms;
+          animation-delay: 14600ms;
+}
+
+section .cardlines .cardlines__cardline__74 {
+  -webkit-animation-delay: 14800ms;
+          animation-delay: 14800ms;
+}
+
+section .cardlines .cardlines__cardline__75 {
+  -webkit-animation-delay: 15000ms;
+          animation-delay: 15000ms;
+}
+
+section .cardlines .cardlines__cardline__76 {
+  -webkit-animation-delay: 15200ms;
+          animation-delay: 15200ms;
+}
+
+section .cardlines .cardlines__cardline__77 {
+  -webkit-animation-delay: 15400ms;
+          animation-delay: 15400ms;
+}
+
+section .cardlines .cardlines__cardline__78 {
+  -webkit-animation-delay: 15600ms;
+          animation-delay: 15600ms;
+}
+
+section .cardlines .cardlines__cardline__79 {
+  -webkit-animation-delay: 15800ms;
+          animation-delay: 15800ms;
+}
+
+section .cardlines .cardlines__cardline__80 {
+  -webkit-animation-delay: 16000ms;
+          animation-delay: 16000ms;
+}
+
+section .cardlines .cardlines__cardline__81 {
+  -webkit-animation-delay: 16200ms;
+          animation-delay: 16200ms;
+}
+
+section .cardlines .cardlines__cardline__82 {
+  -webkit-animation-delay: 16400ms;
+          animation-delay: 16400ms;
+}
+
+section .cardlines .cardlines__cardline__83 {
+  -webkit-animation-delay: 16600ms;
+          animation-delay: 16600ms;
+}
+
+section .cardlines .cardlines__cardline__84 {
+  -webkit-animation-delay: 16800ms;
+          animation-delay: 16800ms;
+}
+
+section .cardlines .cardlines__cardline__85 {
+  -webkit-animation-delay: 17000ms;
+          animation-delay: 17000ms;
+}
+
+section .cardlines .cardlines__cardline__86 {
+  -webkit-animation-delay: 17200ms;
+          animation-delay: 17200ms;
+}
+
+section .cardlines .cardlines__cardline__87 {
+  -webkit-animation-delay: 17400ms;
+          animation-delay: 17400ms;
+}
+
+section .cardlines .cardlines__cardline__88 {
+  -webkit-animation-delay: 17600ms;
+          animation-delay: 17600ms;
+}
+
+section .cardlines .cardlines__cardline__89 {
+  -webkit-animation-delay: 17800ms;
+          animation-delay: 17800ms;
+}
+
+section .cardlines .cardlines__cardline__90 {
+  -webkit-animation-delay: 18000ms;
+          animation-delay: 18000ms;
+}
+
+section .cardlines .cardlines__cardline__91 {
+  -webkit-animation-delay: 18200ms;
+          animation-delay: 18200ms;
+}
+
+section .cardlines .cardlines__cardline__92 {
+  -webkit-animation-delay: 18400ms;
+          animation-delay: 18400ms;
+}
+
+section .cardlines .cardlines__cardline__93 {
+  -webkit-animation-delay: 18600ms;
+          animation-delay: 18600ms;
+}
+
+section .cardlines .cardlines__cardline__94 {
+  -webkit-animation-delay: 18800ms;
+          animation-delay: 18800ms;
+}
+
+section .cardlines .cardlines__cardline__95 {
+  -webkit-animation-delay: 19000ms;
+          animation-delay: 19000ms;
+}
+
+section .cardlines .cardlines__cardline__96 {
+  -webkit-animation-delay: 19200ms;
+          animation-delay: 19200ms;
+}
+
+section .cardlines .cardlines__cardline__97 {
+  -webkit-animation-delay: 19400ms;
+          animation-delay: 19400ms;
+}
+
+section .cardlines .cardlines__cardline__98 {
+  -webkit-animation-delay: 19600ms;
+          animation-delay: 19600ms;
+}
+
+section .cardlines .cardlines__cardline__99 {
+  -webkit-animation-delay: 19800ms;
+          animation-delay: 19800ms;
+}
+
 header {
+  height: 75px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
   font-family: "Shrikhand", cursive;
   padding: 4.8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .back {
+  position: absolute;
+  top: 37.5px;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+  outline: 0;
+  border: none;
 }
 
 .localisation {
@@ -60,7 +830,6 @@ header {
 }
 
 .explore__title {
-  font-size: 25px;
   font-weight: bolder;
 }
 
@@ -69,11 +838,11 @@ header {
 }
 
 .explore__button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
   padding: 13px 18px;
   border: none;
   border-radius: 60px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
   color: #fff;
   font-weight: bold;
 }
@@ -128,7 +897,7 @@ header {
   border-radius: 60px;
   position: absolute;
   left: -5px;
-  font-size: 12px;
+  font-size: 0.7em;
 }
 
 .fonctionnement__btn__icon {
@@ -238,33 +1007,59 @@ header {
   max-width: 100%;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8em;
 }
 
 .card__content {
-  padding: 5px 0 0 15px;
+  padding: 5px 15px 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .card__content__text__localisation {
   margin: 3px 0 15px 0;
 }
 
+.card__content a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__content__icon {
+  position: relative;
+}
+
 .btn__like {
   cursor: pointer;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
 }
 
 .btn__like .like-empty,
 .btn__like .like-full {
   position: absolute;
-  right: 30px;
-  bottom: 30px;
-  font-size: 20px;
+  pointer-events: none;
+  font-size: 30px;
 }
 
 .btn__like:hover .like-empty {
@@ -302,7 +1097,7 @@ header {
 
 .footer__title {
   font-family: "Shrikhand", cursive;
-  font-size: 20px;
+  font-size: 1.4em;
   margin: 10px 0 10px 25px;
 }
 
@@ -334,6 +1129,21 @@ header {
   }
 }
 
+@media screen and (min-width: 734px) {
+  .footer {
+    text-align: center;
+  }
+  .footer__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 50px;
+  }
+}
+
 @media screen and (min-width: 852px) {
   .fonctionnement__article {
     display: -webkit-box;
@@ -359,18 +1169,6 @@ header {
   .btn__like .like-full {
     right: 30px;
     bottom: 12px;
-  }
-  .footer {
-    text-align: center;
-  }
-  .footer__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 50px;
   }
 }
 /*# sourceMappingURL=style.css.map */

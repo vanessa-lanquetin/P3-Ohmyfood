@@ -1,22 +1,20 @@
 // Polices
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-//Couleurs
-$color-primary: #9356dc;
-$color-secondary: #ff79da;
-$color-tertiary: #99e2d0;
-$color-background: #f6f6f6;
+@import "./colors";
+@import "./menu";
 
 //Bases
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  color: $color-text;
 }
 h1,
 h3 {
   margin: 10px 0 0 0;
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -35,11 +33,57 @@ a {
   }
 }
 
+@mixin gradient-btn {
+  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+  padding: 13px 18px;
+  border: none;
+  border-radius: 60px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-gradient {
+  @include gradient-btn;
+  @include shadow()
+}
+
+
+section {
+  .cardlines {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    $cardlineHeight: 70px;
+    $cardlinePadding: 10px;
+    @for $i from 1 to 100 {
+      .cardlines__cardline__#{$i} {
+        animation-delay: $i * 200ms;
+      }
+    }
+  }
+}
+
+$navbarHeight: 75px;
 //Header
 header {
+  height: $navbarHeight;
+  box-sizing: border-box;
   text-align: center;
   font-family: "Shrikhand", cursive;
   padding: 4.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .back {
+    position: absolute;
+    top: $navbarHeight / 2;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    outline: 0;
+    border: none;
+  }
 }
 
 //Localisation
@@ -71,7 +115,6 @@ header {
   padding: 40px 50px;
 
   &__title {
-    font-size: 25px;
     font-weight: bolder;
   }
 
@@ -80,13 +123,8 @@ header {
   }
 
   &__button {
-    padding: 13px 18px;
-    border: none;
-    border-radius: 60px;
-    background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
-    color: #fff;
-    font-weight: bold;
     @include shadow;
+    @include gradient-btn;
   }
 }
 
@@ -115,7 +153,7 @@ header {
       border-radius: 60px;
       position: absolute;
       left: -5px;
-      font-size: 12px;
+      font-size: 0.7em;
     }
     &__icon {
       margin-left: 20px;
@@ -187,27 +225,42 @@ header {
       max-width: 100%;
       border-radius: 4px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 0.8em;
     }
   }
   &__content {
-    padding: 5px 0 0 15px;
+    padding: 5px 15px 0 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
     &__text__localisation {
       margin: 3px 0 15px 0;
+    }
+    a {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__icon {
+      position: relative;
     }
   }
 }
 //Coeur
 .btn__like {
   cursor: pointer;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
   .like-empty,
   .like-full {
     position: absolute;
-    right: 30px;
-    bottom: 30px;
-    font-size: 20px;
+    pointer-events: none;
+    font-size: 30px;
   }
 
   &:hover {
@@ -243,7 +296,7 @@ header {
   padding: 15px 0;
   &__title {
     font-family: "Shrikhand", cursive;
-    font-size: 20px;
+    font-size: 1.4em;
     margin: 10px 0 10px 25px;
   }
   a {
@@ -265,8 +318,18 @@ header {
       width: 80%;
       margin-left: 20px;
       &__number {
-        left:-8px;
+        left: -8px;
       }
+    }
+  }
+}
+@media screen and (min-width: 734px) {
+  .footer {
+    text-align: center;
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
     }
   }
 }
@@ -293,17 +356,8 @@ header {
   .btn__like {
     .like-empty,
     .like-full {
-
       right: 30px;
       bottom: 12px;
-    }
-  }
-  .footer{
-    text-align: center;
-    &__list{
-      display: flex;
-      justify-content: center;
-      gap: 50px;
     }
   }
 }
