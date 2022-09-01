@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .background {
   width: 100%;
-  max-height: 40vh;
+  max-height: 360px;
 }
 
 .background img {
@@ -50,6 +50,22 @@
 
 .mainsection__header__actions__like {
   position: relative;
+}
+
+.mainsection .responsive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.space {
+  background-color: transparent;
+  width: 100%;
+  height: 20px;
 }
 
 .menu h2 {
@@ -177,11 +193,11 @@ section .cardlines__cardline__actions button i {
           transform: rotateZ(-360deg);
 }
 
-section .cardlines__cardline:hover .cardlines__cardline__actions {
+section .cardlines__cardline:hover .cardlines__cardline__actions, section .cardlines__cardline :focus .cardlines__cardline__actions {
   max-width: 1000px;
 }
 
-section .cardlines__cardline:hover .cardlines__cardline__actions i {
+section .cardlines__cardline:hover .cardlines__cardline__actions i, section .cardlines__cardline :focus .cardlines__cardline__actions i {
   -webkit-transition: 300ms;
   transition: 300ms;
   -webkit-transform: rotateZ(0deg);
@@ -221,11 +237,28 @@ section .cardlines__cardline:hover .cardlines__cardline__actions i {
   }
 }
 
+@media screen and (min-width: 852px) {
+  .mainsection {
+    width: 55%;
+    margin: 50px auto;
+    border-radius: 50px;
+    padding: 50px 60px;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .background img {
+    max-height: 360px;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: #343434;
-  background-color: #f6f6f6;
+}
+
+header {
+  background-color: white;
 }
 
 h1,
@@ -1118,6 +1151,11 @@ header .back {
   margin-bottom: 5px;
 }
 
+.footer__list__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 @media screen and (min-width: 585px) {
   .fonctionnement__btn {
     display: -webkit-box;
@@ -1169,11 +1207,6 @@ header .back {
             flex-direction: row;
     gap: 20px;
     margin: 0 20px;
-  }
-  .btn__like .like-empty,
-  .btn__like .like-full {
-    right: 30px;
-    bottom: 12px;
   }
 }
 /*# sourceMappingURL=style.css.map */

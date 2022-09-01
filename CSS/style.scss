@@ -1,15 +1,19 @@
 // Polices
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import "./colors";
-@import "./menu";
+@import "../colors";
+@import "../menu";
 
 //Bases
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: $color-text;
-  background-color: $color-background;
+  // background-color: $color-background;
+  
+}
+header{
+  background-color: white;
 }
 h1,
 h3 {
@@ -310,6 +314,9 @@ header {
     margin-left: 25px;
     &__item {
       margin-bottom: 5px;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -355,13 +362,6 @@ header {
       flex-direction: row;
       gap: 20px;
       margin: 0 20px;
-    }
-  }
-  .btn__like {
-    .like-empty,
-    .like-full {
-      right: 30px;
-      bottom: 12px;
     }
   }
 }
