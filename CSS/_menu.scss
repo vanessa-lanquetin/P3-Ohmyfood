@@ -30,7 +30,7 @@
       position: relative;
     }
   }
-  .responsive{
+  .responsive {
     display: flex;
     flex-direction: column;
   }
@@ -104,7 +104,7 @@ section {
         margin: 0 15px;
       }
       &__actions {
-        transition: 300ms;
+        transition: transform 300ms;
         right: 0;
         top: 0;
         display: flex;
@@ -130,7 +130,8 @@ section {
         }
       }
 
-      &:hover,:focus {
+      &:hover,
+      :focus {
         .cardlines__cardline__actions {
           max-width: 1000px;
           i {
@@ -173,8 +174,7 @@ section {
     transform: none;
   }
 
-  .background img{
+  .background img {
     max-height: 360px;
   }
-
 }

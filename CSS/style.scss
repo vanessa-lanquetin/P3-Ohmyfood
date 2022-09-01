@@ -1,39 +1,16 @@
 // Polices
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "./bases";
 @import "./colors";
+@import "./loader";
 @import "./menu";
 
-//Bases
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  color: $color-text;
-  // background-color: $color-background;
-  
-}
-header{
-  background-color: white;
-}
-h1,
-h3 {
-  margin: 10px 0 0 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  color: black;
-  margin: 0;
-}
-
+//Mixins
 @mixin shadow {
   &:hover {
+    transition: transform 300ms;
     transform: scale(1.02);
-    transition: 300ms;
     box-shadow: 4px 4px 10px #a3a2a2;
   }
 }
@@ -47,11 +24,11 @@ a {
   font-weight: bold;
 }
 
+//Defaut
 .btn-gradient {
   @include gradient-btn;
-  @include shadow()
+  @include shadow();
 }
-
 
 section {
   .cardlines {
@@ -69,6 +46,7 @@ section {
   }
 }
 
+//Header
 $navbarHeight: 75px;
 //Header
 header {
@@ -314,13 +292,15 @@ header {
     margin-left: 25px;
     &__item {
       margin-bottom: 5px;
-      &:hover{
+      &:hover {
         transform: scale(1.1);
       }
     }
   }
 }
 
+
+//Responsive
 @media screen and (min-width: 585px) {
   .fonctionnement {
     &__btn {

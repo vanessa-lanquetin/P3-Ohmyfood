@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: $color-text;
+  position: relative;
+}
+header {
+  background-color: white;
+}
+h1,
+h3 {
+  margin: 10px 0 0 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+}
