@@ -1,3 +1,4 @@
+// Image en arrière plan
 .background {
   width: 100%;
   max-height: 360px;
@@ -7,6 +8,7 @@
   }
 }
 
+//Container
 .mainsection {
   display: flex;
   flex-direction: column;
@@ -30,22 +32,15 @@
       position: relative;
     }
   }
-  .responsive {
-    display: flex;
-    flex-direction: column;
-  }
 }
-.space {
-  background-color: transparent;
-  width: 100%;
-  height: 20px;
-}
+//Title
 .menu h2 {
   color: lighten($color-text, 25);
   font-weight: 100;
   position: relative;
   text-transform: uppercase;
-  &::after {
+  //Border
+  &::after { 
     content: "";
     position: absolute;
     top: 100%;
@@ -93,16 +88,18 @@ section {
         overflow: hidden;
         text-overflow: ellipsis;
       }
-
+      //Repas
       &__left {
         flex: 1 1 0;
         min-width: 0;
       }
-      &__right {
+      //Prix
+      &__right { 
         font-weight: bold;
         align-self: flex-end;
         margin: 0 15px;
       }
+      //Partie verte check
       &__actions {
         transition: transform 300ms;
         right: 0;
@@ -129,7 +126,7 @@ section {
           }
         }
       }
-
+      //Apparition de la partie verte + rotation de l'icône
       &:hover,
       :focus {
         .cardlines__cardline__actions {
@@ -152,6 +149,8 @@ section {
   width: 170px;
   font-size: 16px;
 }
+
+
 //Animation apparition
 @keyframes cardAppear {
   0% {
@@ -165,6 +164,7 @@ section {
   }
 }
 
+//Responsive
 @media screen and (min-width: 852px) {
   .mainsection {
     width: 55%;
