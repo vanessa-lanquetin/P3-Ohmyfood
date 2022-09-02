@@ -131,8 +131,9 @@ section {
       :focus {
         .cardlines__cardline__actions {
           max-width: 1000px;
+          transition: 8s ease-out;
           i {
-            transition: 300ms;
+            transition: 700ms ease-out;
             transform: rotateZ(0deg);
           }
         }

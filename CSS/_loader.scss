@@ -16,6 +16,12 @@
     font-size: 2em;
     color: white;
   }
+  &__itemContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
   &__item {
     height: 1rem;
     width: 1rem;

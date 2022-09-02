@@ -1,15 +1,15 @@
 // Polices
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import "./bases";
 @import "./colors";
+@import "./bases";
 @import "./loader";
 @import "./menu";
 
 //Mixins
 @mixin shadow {
   &:hover {
-    transition: transform 300ms;
+    transition: 500ms ease-out;
     transform: scale(1.02);
     box-shadow: 4px 4px 10px #a3a2a2;
   }
@@ -259,7 +259,7 @@ header {
   }
 
   .like-empty {
-    transition: all 2s ease-in-out;
+    transition: all 800ms ease-out;
   }
 
   .like-full {
