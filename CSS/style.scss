@@ -237,8 +237,6 @@ header {
 //Coeur
 .btn__like {
   cursor: pointer;
-  right: 0;
-  top: 0;
   width: 30px;
   height: 30px;
   z-index: 2;
@@ -273,6 +271,13 @@ header {
       opacity: 1;
     }
   }
+}
+
+.btn__like--accueil{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+
 }
 
 //Footer
@@ -343,5 +348,12 @@ header {
       gap: 20px;
       margin: 0 20px;
     }
+  }
+}
+
+
+@media screen and (min-width: 852px) and (max-width:1015px){
+  .btn__like--accueil{
+    bottom: 7px;
   }
 }
